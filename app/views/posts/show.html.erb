@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ニックネーム:</strong>
+  <%= @post.user.name %>
+</p>
+
+<!--<p>
+  <strong>タイトル:</strong>
+  <%= @post.title %>
+</p>-->
+
+<p>
+  <strong>テキスト:</strong>
+  <%= @post.body %>
+</p>
+
+<% if current_user.id == @post.user.id %>
+ <%= link_to '編集', edit_post_path(@post) %> |
+ <%= link_to '削除', @post, method: :delete, data: {confirm: 'よろしいですか?' } %>
+ <% end %>
+<%= link_to '戻る', posts_path %>

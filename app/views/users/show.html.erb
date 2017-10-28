@@ -1,0 +1,26 @@
+<% if @user.id == current_user.id %>
+<h3>マイページ</h3>
+<% else %>
+<h3><%= @user.name %>さんのページ</h3>
+<% end %>
+
+  <% if @user.image? %>
+   <%= image_tag @user.image.url %>
+   <% else %>
+   <p>画像がありません</p>
+   <% end %>
+
+ <p><%= @user.my_profile %></p>
+
+<ul>
+	<li>
+		<%= link_to user_path(@user) do %>
+		<div class="text">投稿数</div>
+		<div class="num"><%= @user.posts.count %></div>
+		<% end %>
+	</li>
+</ul>
+
+ <% @user.posts.each do |post| %>
+ 	<p><%= link_to post.body, post_path(post) %></p>
+ <% end %>
