@@ -4,26 +4,15 @@
 
 <%= link_to '投稿', new_post_path %>
 
-<table>
-  <thead>
-    <tr>
-      <!--<th>ニックネーム</th>
-      <th>タイトル</th>-->
-      <th>テキスト</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<table class="spacing">
     <% @posts.reverse_each do |post| %>
       <tr>
-        <!--<td><%= post.user.name %></td>
-        <td><%= link_to post.title, post_path(post) %></td>-->
-        <td><%= link_to post.user.name, user_path(post.user) %>
-          <%= link_to post.body, post_path(post) %></td>
+        <td><%= link_to post.user.name, user_path(post.user) %> |
+          <div class="arrow_box">
+          <%= link_to post.body, post_path(post) %></div>
+        </td>
       </tr>
     <% end %>
-  </tbody>
 </table>
 
 <br>

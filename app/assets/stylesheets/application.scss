@@ -19,12 +19,59 @@
 body {
 	font-size: 18px;
 	background-image: image-url("doodles.png");
+	max-width: 1000px;
 }
 
 h1 {
 	text-align: center;
 }
 
-td {
-	width: 80%;
+table{
+	width: 100%;
+}
+
+.spacing{
+	border-collapse: separate;
+	border-spacing: 10px;
+}
+
+.header_box{
+	padding: 10px;
+}
+
+table a{
+  color: #000
+}
+
+.arrow_box {
+	position: relative;
+	background: #D3EDFB;
+	border: 1px solid #000;
+	border-radius: 10px;
+	padding: 5px 10px;
+	display: inline-block;
+}
+
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(211, 237, 251, 0);
+	border-right-color: #D3EDFB;
+	border-width: 5px;
+	margin-top: -5px;
+}
+.arrow_box:before {
+	border-color: rgba(0, 0, 0, 0);
+	border-right-color: #000;
+	border-width: 6px;
+	margin-top: -6px;
 }
